@@ -6,14 +6,65 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		555592DD2C9D178E005E7AB9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555592DC2C9D178E005E7AB9 /* WidgetKit.framework */; };
+		555592DF2C9D178E005E7AB9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555592DE2C9D178E005E7AB9 /* SwiftUI.framework */; };
+		555592EA2C9D178F005E7AB9 /* WD1Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 555592DA2C9D178E005E7AB9 /* WD1Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		555592E82C9D178F005E7AB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 555592BD2C9D1752005E7AB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 555592D92C9D178E005E7AB9;
+			remoteInfo = WD1Extension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		555592EF2C9D178F005E7AB9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				555592EA2C9D178F005E7AB9 /* WD1Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		555592C52C9D1752005E7AB9 /* SpotifyWD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyWD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		555592DA2C9D178E005E7AB9 /* WD1Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WD1Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		555592DC2C9D178E005E7AB9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		555592DE2C9D178E005E7AB9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		555592EB2C9D178F005E7AB9 /* Exceptions for "WD1" folder in "WD1Extension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 555592D92C9D178E005E7AB9 /* WD1Extension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		555592C72C9D1752005E7AB9 /* SpotifyWD */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SpotifyWD;
+			sourceTree = "<group>";
+		};
+		555592E02C9D178E005E7AB9 /* WD1 */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				555592EB2C9D178F005E7AB9 /* Exceptions for "WD1" folder in "WD1Extension" target */,
+			);
+			path = WD1;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +77,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		555592D72C9D178E005E7AB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				555592DF2C9D178E005E7AB9 /* SwiftUI.framework in Frameworks */,
+				555592DD2C9D178E005E7AB9 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				555592C72C9D1752005E7AB9 /* SpotifyWD */,
+				555592E02C9D178E005E7AB9 /* WD1 */,
+				555592DB2C9D178E005E7AB9 /* Frameworks */,
 				555592C62C9D1752005E7AB9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +103,18 @@
 			isa = PBXGroup;
 			children = (
 				555592C52C9D1752005E7AB9 /* SpotifyWD.app */,
+				555592DA2C9D178E005E7AB9 /* WD1Extension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		555592DB2C9D178E005E7AB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				555592DC2C9D178E005E7AB9 /* WidgetKit.framework */,
+				555592DE2C9D178E005E7AB9 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +127,12 @@
 				555592C12C9D1752005E7AB9 /* Sources */,
 				555592C22C9D1752005E7AB9 /* Frameworks */,
 				555592C32C9D1752005E7AB9 /* Resources */,
+				555592EF2C9D178F005E7AB9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				555592E92C9D178F005E7AB9 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				555592C72C9D1752005E7AB9 /* SpotifyWD */,
@@ -69,6 +143,28 @@
 			productName = SpotifyWD;
 			productReference = 555592C52C9D1752005E7AB9 /* SpotifyWD.app */;
 			productType = "com.apple.product-type.application";
+		};
+		555592D92C9D178E005E7AB9 /* WD1Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 555592EC2C9D178F005E7AB9 /* Build configuration list for PBXNativeTarget "WD1Extension" */;
+			buildPhases = (
+				555592D62C9D178E005E7AB9 /* Sources */,
+				555592D72C9D178E005E7AB9 /* Frameworks */,
+				555592D82C9D178E005E7AB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				555592E02C9D178E005E7AB9 /* WD1 */,
+			);
+			name = WD1Extension;
+			packageProductDependencies = (
+			);
+			productName = WD1Extension;
+			productReference = 555592DA2C9D178E005E7AB9 /* WD1Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +177,9 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					555592C42C9D1752005E7AB9 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					555592D92C9D178E005E7AB9 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -100,12 +199,20 @@
 			projectRoot = "";
 			targets = (
 				555592C42C9D1752005E7AB9 /* SpotifyWD */,
+				555592D92C9D178E005E7AB9 /* WD1Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		555592C32C9D1752005E7AB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		555592D82C9D178E005E7AB9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +229,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		555592D62C9D178E005E7AB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		555592E92C9D178F005E7AB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 555592D92C9D178E005E7AB9 /* WD1Extension */;
+			targetProxy = 555592E82C9D178F005E7AB9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		555592D12C9D1754005E7AB9 /* Debug */ = {
@@ -300,6 +422,58 @@
 			};
 			name = Release;
 		};
+		555592ED2C9D178F005E7AB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WD1/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WD1;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teresaakin.SpotifyWD.WD1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		555592EE2C9D178F005E7AB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WD1/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WD1;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teresaakin.SpotifyWD.WD1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -317,6 +491,15 @@
 			buildConfigurations = (
 				555592D42C9D1754005E7AB9 /* Debug */,
 				555592D52C9D1754005E7AB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		555592EC2C9D178F005E7AB9 /* Build configuration list for PBXNativeTarget "WD1Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				555592ED2C9D178F005E7AB9 /* Debug */,
+				555592EE2C9D178F005E7AB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
