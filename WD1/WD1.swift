@@ -33,67 +33,86 @@ struct SimpleEntry: TimelineEntry {
 
 struct WD1EntryView : View {
     var entry: Provider.Entry
-
+    
     var body: some View {
-        ZStack {
-            Color.clear
-            HStack(spacing: 18) {
-                ZStack {
+        HStack(alignment: .top, spacing: 18) {
+            // Album cover art placeholder
+            ZStack(alignment: .topTrailing) {
+                Image(.mtsSwift)
+                    .resizable()
+                    .frame(width:60, height:60)
+                    .cornerRadius(6)
+//                RoundedRectangle(cornerRadius: 6)
+//                    .fill(Color.gray)
+//                    .frame(width: 60, height: 60)
+               
+                ZStack{
+
+                        // pfp placeholder
+
+                        Image(.arcPfp)
+                            .resizable() // Allows the image to be resized
+                            .aspectRatio(contentMode: .fill)
+                            .cornerRadius(4)
+                            .frame(width: 25, height: 25) // Set the frame size for cropping
+                            .clipShape(RoundedRectangle(cornerRadius: 4)) // clips image to the rounded shape
+                            .clipped() // This ensures that only the part of the image inside the frame is displayed
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 4)
+                                    .stroke(Color.black, lineWidth: 2)
+                            )
+
+                } .offset(x: 8, y: 40)
+                
+                
+            }
             
-                    // album art placeholder
-                            RoundedRectangle(cornerRadius: 6)
-                                .fill(Color.gray)
-                                .frame(width: 60, height: 60)
-                                .padding(.top, -30) // Negative padding to move it up
-                    
-                    // pfp placeholder on top of the album art
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(Color.white)
-                        .frame(width: 25, height: 25)
-                        .offset(x: 25, y: 10)
-                }
-                .padding(.leading, 10)
-                
-        
-                
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("LISTENING TO...")
-                        .font(.system(size: 8, weight: .semibold))
-                        .foregroundColor(.gray)
-                        .padding(.top, -16) // Negative padding to move it up
-                    
-                    Text("Reminders")
-                        .font(.system(size: 16, weight: .bold))
-                        .foregroundColor(.white)
-                        .padding(.top, -8) // Negative padding to move it up
-                    
-                    
-                    Text("Mariah The Scientist")
-                        .font(.system(size: 12))
-                        .foregroundColor(.white)
-                    
-                    HStack(spacing: 12) {
-                        Text("❤️")
-                            .font(.system(size: 16))
-//                        Image(systemName: "flame.fill")
-//                        Image(systemName: "face.smiling.fill")
-//                        Image(systemName: "hand.thumbsdown.fill")
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("LISTENING TO...")
+                            .font(.system(size: 10, weight: .semibold))
+                            .foregroundColor(.gray)
+                        
+                        Text("Reminders")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.white)
+                        
+                        Text("Mariah The Scientist")
+                            .font(.system(size: 14))
+                            .foregroundColor(.white.opacity(0.9))
                     }
-                    .foregroundColor(.gray)
+                    
+                    Spacer()
+                    
+                    // Spotify logo
+                    Image(.spotifyLogo)
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .offset(y: -16) // Move the logo up by adjusting the y axis offset
+
                 }
+                
                 Spacer()
                 
-                // spotify logo placeholder //fix this! use stacks
-                Circle()
-                    .fill(Color.green)
-                    .frame(width: 20, height: 20)
-                    .padding(.top, -50) // Negative padding to move it up
-                    
+                // Emoji reactions
+                HStack(spacing: 8) {
+                    Spacer() // pushes emoji list to the right
+                    ForEach(["❤️", "🔥", "😂", "👎"], id: \.self) { emoji in
+                        ZStack {
+                            Circle()
+                                .fill(Color.gray.opacity(0.3))
+                                .frame(width: 30, height: 30)
+                            Text(emoji)
+                                .font(.system(size: 12))
+                        }
+                    }
+                }
             }
-
+            .padding(.trailing, 10) // Add padding to the right for better alignment
         }
-        .containerBackground(Color.black, for: .widget) // Optional: Use system background for the widget
-
+        .padding(6) // gives the layout a solid feel
+        .containerBackground(Color.black, for: .widget)
     }
 }
 
@@ -110,7 +129,6 @@ struct WD1: Widget {
         .supportedFamilies([.systemMedium])
     }
 }
-
 
 struct WD1_Previews: PreviewProvider {
     static var previews: some View {
